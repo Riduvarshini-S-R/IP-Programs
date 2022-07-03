@@ -1,0 +1,10 @@
+<web-app>
+<servlet>
+<servlet-name>Session Tracking</servlet-name>
+<servlet-class>sessiontrack</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Session Tracking</servlet-name>
+<url-pattern>/sessiontrack</url-pattern>
+</servlet-mapping>
+</web-app>

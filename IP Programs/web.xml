@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<web-app>
+<servlet>
+<servlet-name>parameter</servlet-name>
+<servlet-class>parameter</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>parameter</servlet-name>
+<url-pattern>/parameter</url-pattern>
+</servlet-mapping>
+</web-app>
