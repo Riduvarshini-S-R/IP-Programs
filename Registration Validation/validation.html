@@ -1,0 +1,133 @@
+<html>
+<head>
+<title> Java script validations</title>
+
+<script>
+//alert("hai");
+
+function validate()
+{
+    var name=document.f1.uname;
+    var age=document.f1.uage;
+    var email=document.f1.umail;
+    var add=document.f1.uaddress;
+    var s=document.f1.r1;
+    var ph=document.f1.uphone;
+    var ad=document.f1.uaddress;
+    var co=document.f1.c1;
+    var dep=document.f1.dept;
+
+    if(name.value==""||name.value==null) {
+        alert("Name should not be empty");
+        name.focus();
+        return false;
+    } 
+
+    if(age.value==""||age.value==null) {
+        alert("Age should not be empty");
+        age.focus();
+        return false;
+    }
+
+    if(isNaN(age.value)){
+        alert("Age should in Number");
+        age.focus();return false;
+    }
+
+    if(s[0].checked==false&&s[1].checked==false) {
+        alert("Select Sex");
+        return false;
+    }
+
+    if(email.value==""||email.value==null) {
+        alert("Email should not be empty");
+        email.focus();
+        return false;
+    }
+
+    e=email.value;
+    if(e.indexOf("@")==-1||e.indexOf(".")==-1||e.indexOf(".")==0) {
+        alert("Invalid Email ID");
+        email.focus();
+        return false;
+    }
+
+
+    if(isNaN(ph.value)){
+        alert("Phone No should in Number");
+        ph.focus();return false;
+    }
+
+    if(ph.value.length<10||ph.value.length>10) {
+        alert("mobile no must be 10 digit");
+        ph.focus();
+        return false;
+    }
+
+    if(ad.value==""||ad.value==null) {
+        alert("Address should not be empty");
+        ad.focus();
+        return false;
+    }
+
+    if(co[0].checked==false&&co[1].checked==false&&co[2].checked==false) {
+        alert("Select Course");
+        return false;
+    }
+
+    if(dep.value=="select") {
+        alert("Select Dept");
+        return false;
+    }
+    vara,b;
+    a=document.f1.p1.value;
+    b=document.f1.p2.value;
+    if(a==""||b=="") {
+        alert("Password should not be empty");
+        document.f1.p1.focus();
+        return false;
+    }
+    if(a==b)
+        alert("password match success");
+    else
+        alert("password match fail");
+    }
+
+</script>
+</head>
+<body>
+
+<form name="f1" method="get" action="" >
+Name  :<input type="text" name="uname" value=""><br><br>
+age  :<input type="text" name="uage" value=""><br><br>
+
+Sex:<input type="radio"name="r1"value="Male">Male 
+<input type="radio"name="r1"value="Female">Female<br><br>
+
+mail id  :<input type="text" name="umail" value=""><br><br>
+phone  :<input type="text" name="uphone"  value=""><br><br>
+address  :<input type="textarea" name="uaddress" value=""><br><br>
+
+Courses:<br><input type="checkbox"name="c1"value="c">C<br/>
+<input type="checkbox"name="c1"value="cplusplus">C++<br/>
+<input type="checkbox"name="c1"value="java">JAVA<br/>
+<input type="checkbox"name="c1"value="dotNET">.NET<br/>
+
+DEPT:<select name="dept">
+<option value="select" selected="selected">select your dept</option>
+<option value="cse">CSE</option>
+<option value="it">IT</option>
+<option value=”eee”>EEE</option>
+<option value=”ece”>ECE</option>
+</select><br><br>
+
+password  :<input type="password" name="p1" value=""><br><br>
+retype password  :<input type="password" name="p2" value="" ><br><br>
+
+
+<input type="button" value="button" onclick="validate()">
+<input type="reset" value="cancel" >
+
+</form>
+</body>
+</html>
